@@ -3,12 +3,13 @@ const inquirer = require("inquirer");
 const Square = require("./lib/Square");
 const Triangle = require("./lib/Triangle");
 const Circle = require("./lib/Circle");
-const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
-inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
+
+const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt');
+inquirer.registerPrompt('maxlength', MaxLengthInputPrompt);
 
 const promptArray = [
     {
-        type: 'maxlength-input',
+        type: 'maxlength',
         message: 'Enter Logo Text. Max 3 Char.',
         name: 'logoText',
         maxLength: 3
