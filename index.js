@@ -3,9 +3,8 @@ const inquirer = require("inquirer");
 const Square = require("./lib/Square");
 const Triangle = require("./lib/Triangle");
 const Circle = require("./lib/Circle");
-
-const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt');
-inquirer.registerPrompt('maxlength', MaxLengthInputPrompt);
+const MaxLengthInputPrompt = require("inquirer-maxlength-input-prompt")
+inquirer.registerPrompt('maxlength', MaxLengthInputPrompt)
 
 const promptArray = [
     {
@@ -58,5 +57,8 @@ function generateShapeObject(userResponse){
         case "square":
             const squareObj = new Square(userResponse.logoText.substring(0,3), userResponse.logoColor, userResponse.textColor);
             return squareObj;
+        case "triangle":
+            const trianlgeObj = new Triangle(userResponse.logoText.substring(0,3), userResponse.logoColor, userResponse.textColor);
+            return trianlgeObj;
     }
 }
